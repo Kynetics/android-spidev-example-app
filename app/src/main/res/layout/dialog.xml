@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (C)  2018-2019 Kynetics, LLC
+  ~ SPDX-License-Identifier: Apache-2.0
+  ~
+  -->
+
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/linearLayout2"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TableRow
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginEnd="40dp"
+        android:layout_marginStart="40dp">
+
+        <TextView
+            android:id="@+id/dialogBusTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:text="Bus:"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/dialogBusInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_column="2"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="5" />
+
+        <TextView
+            android:id="@+id/dialogCsTxt"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_column="3"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:text="Chipsel:"
+            android:textSize="18sp" />
+
+        <EditText
+            android:id="@+id/dialogCsInput"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_column="4"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="number"
+            android:maxLength="5" />
+    </TableRow>
+
+</TableLayout>
