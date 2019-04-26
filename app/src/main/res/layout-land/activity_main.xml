@@ -41,7 +41,7 @@
             android:layout_marginTop="-170dp">
 
             <TextView
-                android:id="@+id/ devTxt"
+                android:id="@+id/devTxt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginEnd="8dp"
