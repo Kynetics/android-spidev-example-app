@@ -8,7 +8,7 @@
 
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:foregroundGravity="fill_vertical"
@@ -17,13 +17,13 @@
     android:scrollbars="vertical"
     android:fillViewport="true">
 
-    <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <TableLayout
         android:id="@+id/tableLayout_0"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:baselineAligned="false"
         >
-        <android.support.constraint.ConstraintLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="200dp"
             android:background="#303030">
@@ -36,7 +36,7 @@
                 android:background="@drawable/kyn_logo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-        </android.support.constraint.ConstraintLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
         <TableRow
             android:layout_width="match_parent"
@@ -54,7 +54,7 @@
                 android:textColor="@android:color/white" />
         </TableRow>
 
-        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        <androidx.cardview.widget.CardView
             android:id="@+id/card_view_mode"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -65,7 +65,7 @@
             card_view:cardCornerRadius="10dp"
             card_view:cardElevation="2dp">
 
-            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            <TableLayout
                 android:id="@+id/tableLayout_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -132,9 +132,9 @@
                     </RadioGroup>
                 </TableRow>
             </TableLayout>
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        <androidx.cardview.widget.CardView
             android:id="@+id/card_view_speed"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -145,7 +145,7 @@
             card_view:cardCornerRadius="10dp"
             card_view:cardElevation="2dp">
 
-            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            <TableLayout
                 android:id="@+id/tableLayout_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -194,9 +194,9 @@
                         android:text="@string/set_speed" />
                 </TableRow>
             </TableLayout>
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        <androidx.cardview.widget.CardView
             android:id="@+id/card_view_bpw"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -207,7 +207,7 @@
             card_view:cardCornerRadius="10dp"
             card_view:cardElevation="2dp">
 
-            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            <TableLayout
                 android:id="@+id/tableLayout_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -255,9 +255,9 @@
                         android:text="@string/set_bpw" />
                 </TableRow>
             </TableLayout>
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
-        <android.support.v7.widget.CardView xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        <androidx.cardview.widget.CardView
             android:id="@+id/card_view_bjust"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -269,7 +269,7 @@
             card_view:cardCornerRadius="10dp"
             card_view:cardElevation="2dp">
 
-            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            <TableLayout
                 android:id="@+id/tableLayout_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -317,7 +317,7 @@
                     </RadioGroup>
                 </TableRow>
             </TableLayout>
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
     </TableLayout>
 </ScrollView>
