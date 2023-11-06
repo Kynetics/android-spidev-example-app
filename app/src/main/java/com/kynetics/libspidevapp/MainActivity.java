@@ -340,6 +340,9 @@ public class MainActivity extends AppCompatActivity {
     }
     public void onDestroy() {
         super.onDestroy();
-        dev.close();
+        try {
+            dev.close();
+        } catch (Exception ignored) {
+        }
     }
 }
