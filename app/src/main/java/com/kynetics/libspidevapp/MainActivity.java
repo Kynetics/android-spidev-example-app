@@ -7,7 +7,10 @@
 package com.kynetics.libspidevapp;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import android.util.Log;
@@ -21,6 +24,7 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.widget.Toolbar;
 import com.kynetics.libspidev.SpidevException;
 import com.kynetics.libspidev.SpidevFactory;
 import com.kynetics.libspidev.SpidevInterface;
@@ -36,6 +40,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         setTitle(R.string.app_title);
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
+        showDeviceInitializationDialog();
+    }
+
+    private void showDeviceInitializationDialog() {
         LayoutInflater inflater = this.getLayoutInflater();
         View dialogView = inflater.inflate(R.layout.dialog, null);
         final EditText busTxt = dialogView.findViewById(R.id.dialogBusInput);
@@ -46,6 +58,9 @@ public class MainActivity extends AppCompatActivity {
                 .setTitle("SPI device initialization")
                 .setMessage("Specify SPI bus and chip select")
                 .setCancelable(false)
+                .setNeutralButton(R.string.menu_about, (dialog, which) -> {
+                    openAboutActivity();
+                })
                 .setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -83,6 +98,10 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    private void openAboutActivity() {
+        startActivity(new Intent(MainActivity.this, AboutActivity.class));
     }
 
     private int initSpiDevice() throws SpidevException {
@@ -302,6 +321,23 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(final Menu menu) {
+        getMenuInflater().inflate(R.menu.main, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == R.id.menu_recreate) {
+            recreate();
+            return true;
+        } else if (item.getItemId() == R.id.menu_about) {
+            openAboutActivity();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
     public void onDestroy() {
         super.onDestroy();
         dev.close();
