@@ -61,6 +61,12 @@ android {
     productFlavors {
     }
 
+    packagingOptions {
+        jniLibs {
+            useLegacyPackaging false
+        }
+    }
+
 }
 
 dependencies {
