@@ -7,23 +7,25 @@ package com.kynetics.libspidevapp;
 
 import android.os.Bundle;
 import android.text.method.LinkMovementMethod;
-import android.widget.TextView;
+
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+
+import com.kynetics.libspidevapp.databinding.ActivityAboutBinding;
 
 public class AboutActivity extends AppCompatActivity {
+
+    private ActivityAboutBinding binding;
 
     @Override
     protected void onCreate(@Nullable final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_about);
+        binding = ActivityAboutBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+        setSupportActionBar(binding.toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
-        TextView aboutTextView = (TextView) findViewById(R.id.about_text);
-        aboutTextView.setMovementMethod(LinkMovementMethod.getInstance());
+        binding.aboutText.setMovementMethod(LinkMovementMethod.getInstance());
     }
 }
