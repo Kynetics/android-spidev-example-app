@@ -1,5 +1,5 @@
 /*
- * Copyright © 2018 - 2024  Kynetics, Inc.
+ * Copyright © 2018 - 2025  Kynetics, Inc.
  * SPDX-License-Identifier: Apache-2.0
  *
  */
@@ -46,7 +46,6 @@ public class MainActivity extends AppCompatActivity {
         setTitle(R.string.app_title);
 
         setSupportActionBar(binding.toolbar);
-
         showDeviceInitializationDialog();
     }
 
