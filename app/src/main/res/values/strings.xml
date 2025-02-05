@@ -1,5 +1,5 @@
 <!--
-  ~ Copyright © 2018 - 2024  Kynetics, Inc.
+  ~ Copyright © 2018 - 2025  Kynetics, Inc.
   ~ SPDX-License-Identifier: Apache-2.0
   ~
   -->
@@ -31,7 +31,7 @@
         <a href="https://github.com/Kynetics/android-spidev-example-app">https://github.com/Kynetics/android-spidev-example-app</a>\n\n
 
     </string>
-    <string name="about_copyright">Copyright © 2018 – 2024  Kynetics, Inc.</string>
+    <string name="about_copyright">Copyright © 2018 – 2025  Kynetics, Inc.</string>
     <string name="menu_about">About</string>
     <string name="menu_restart">restart</string>
 </resources>

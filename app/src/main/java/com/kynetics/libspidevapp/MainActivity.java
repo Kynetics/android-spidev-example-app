@@ -1,5 +1,5 @@
 /*
- * Copyright © 2018 - 2024  Kynetics, Inc.
+ * Copyright © 2018 - 2025  Kynetics, Inc.
  * SPDX-License-Identifier: Apache-2.0
  *
  */
@@ -23,6 +23,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.kynetics.android.sdk.spi.Spi;
 import com.kynetics.android.sdk.spi.SpidevFactory;
 import com.kynetics.android.sdk.spi.SpidevInterface;
 import com.kynetics.android.sdk.spi.model.SpiBitJust;
@@ -34,6 +35,7 @@ import com.kynetics.libspidevapp.databinding.DialogBinding;
 public class MainActivity extends AppCompatActivity {
     final String TAG = "MainActivity";
     private SpidevInterface dev;
+    private Spi spi;
     private int bus;
     private int chipselect;
     private ActivityMainBinding binding;
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         setTitle(R.string.app_title);
 
         setSupportActionBar(binding.toolbar);
-
+        spi = SpidevFactory.getInstance(this);
         showDeviceInitializationDialog();
     }
 
@@ -103,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
 
     private int initSpiDevice() throws SpidevException {
 
-        dev = SpidevFactory.newInstance(bus, chipselect);
+        dev = spi.open(bus, chipselect);
         Log.d(TAG, String.format("*** Dumpstat: /dev/spidev%d.%d***", dev.getBus(), dev.getChipsel()));
 
         binding.devTxt.setText(String.format("SPI device: spidev%d.%d", dev.getBus(), dev.getChipsel()));

@@ -1,5 +1,5 @@
 /*
- * Copyright © 2018 - 2024  Kynetics, Inc.
+ * Copyright © 2018 - 2025  Kynetics, Inc.
  */
 
 package com.kynetics.libspidevapp;
